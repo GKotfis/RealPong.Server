@@ -12,13 +12,21 @@ export class MenuButton extends Phaser.GameObjects.Rectangle {
         scene.add.existing(this);
         this.setOrigin(0, 0);
 
-        this.label = scene.add.text(x + padding, y + padding, text).setFontFamily('Monospace').setFontSize(18).setAlign('center');
+        this.label = scene.add.text(x, y, text)
+            .setFontFamily('Monospace')
+            .setFontSize(18)
+            .setAlign('center');
 
         const labelWidth = this.label.width + padding;
         const labelHeight = this.label.height + padding;
 
         this.width = labelWidth >= minimumWidth ? labelWidth : minimumWidth;
         this.height = labelHeight >= minimumHeight ? labelHeight : minimumHeight;
+
+        // center button and label
+        this.x = this.x - this.width / 2;
+        this.label.x = this.label.x - this.label.width / 2;
+        this.label.y = this.label.y + this.height / 2 - this.label.height / 2;
 
         this.setInteractive({ useHandCursor: true })
             .on('pointerover', this.enterMenuButtonHoverState)
