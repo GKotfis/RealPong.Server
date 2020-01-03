@@ -1,0 +1,23 @@
+{
+  "name": "realpong.server",
+  "version": "1.0.0",
+  "description": "Real Pong Game",
+  "main": "src/main.ts",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack-dev-server"
+  },
+  "author": "Grzegorz Kotfis",
+  "license": "MIT",
+  "dependencies": {
+    "phaser": "^3.21.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
