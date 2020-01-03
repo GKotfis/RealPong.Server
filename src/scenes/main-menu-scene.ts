@@ -23,7 +23,7 @@ export class MainMenuScene extends Phaser.Scene {
             .setOrigin(0.5);
 
         new MenuButton(this, this.game.scale.width / 2, 150, 'Start Game', () => {
-            console.log('Starting new game');
+            this.scene.start('Game');
         });
     }
 }
