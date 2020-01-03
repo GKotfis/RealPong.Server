@@ -1,4 +1,5 @@
 import * as Phaser from 'phaser'
+import Scenes from './scenes'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Real Pong',
@@ -7,6 +8,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
         width: window.innerWidth,
         height: window.innerHeight
     },
+    scene: Scenes,
     physics: {
         default: 'arcade',
         arcade: {
