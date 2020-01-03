@@ -22,7 +22,7 @@ export class MainMenuScene extends Phaser.Scene {
             .setShadow(1, 1, '#06AED5', 1)
             .setOrigin(0.5);
 
-        new MenuButton(this, this.game.scale.width / 2, 150, 'Start Game', () => {
+        let button = new MenuButton(this, this.game.scale.width / 2, 150, 'New Game', () => {
             this.scene.start('Game');
         });
     }
