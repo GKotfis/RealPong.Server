@@ -1,5 +1,6 @@
 import { Wall } from "../ui/wall";
 import { Ball } from "../ui/ball";
+import { Paddle } from "../ui/paddle";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -13,9 +14,11 @@ export class GameScene extends Phaser.Scene {
         super(sceneConfig);
     }
 
-    private topWall;
-    private bottomWall;
-    private ball;
+    private topWall: Wall
+    private bottomWall: Wall;
+    private ball: Ball;
+    private player_one: Paddle;
+    private player_two: Paddle;
 
     public create() {
 
@@ -23,11 +26,15 @@ export class GameScene extends Phaser.Scene {
         this.topWall = new Wall(this, this.game.scale.width / 2, 20, this.game.scale.width, 20, 0x0DDEE6);
         this.bottomWall = new Wall(this, this.game.scale.width / 2, this.game.scale.height - 20, this.game.scale.width, 20, 0x0DDEE6);
         this.ball = new Ball(this, this.game.scale.width / 2, this.game.scale.height / 2)
+        this.player_one = new Paddle(this, 40, this.game.scale.height / 2, 20, 80, 0xFFFFFF);
+        this.player_two = new Paddle(this, this.game.scale.width - 40, this.game.scale.height / 2, 20, 80, 0xFFFFFF);
     }
 
     public update() {
         this.physics.world.collide(this.ball, this.topWall, null, null, this);
         this.physics.world.collide(this.ball, this.bottomWall, null, null, this);
+        this.physics.world.collide(this.ball, this.player_one);
+        this.physics.world.collide(this.ball, this.player_two);
     }
 }
 
