@@ -10,7 +10,9 @@
   "author": "Grzegorz Kotfis",
   "license": "MIT",
   "dependencies": {
-    "phaser": "^3.21.0"
+    "@types/socket.io": "^2.1.4",
+    "phaser": "^3.21.0",
+    "socket.io": "^2.3.0"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.1.1",
