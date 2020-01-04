@@ -42,12 +42,17 @@ export class ConnectScene extends Phaser.Scene {
             .setShadow(1, 1, '#06AED5', 1)
             .setOrigin(0.5);
 
-        this.loader = this.add.text(this.game.scale.width / 2, this.game.scale.height / 2, '🟢🟡🟢')
-            .setFontSize(44);
+        this.loader = this.add.text(this.game.scale.width / 2, this.game.scale.height / 2, '🕹')
+            .setFontSize(34);
         this.physics.world.enable(this.loader);
         (<Phaser.Physics.Arcade.Body>this.loader.body).setVelocity(300, 300);
         (<Phaser.Physics.Arcade.Body>this.loader.body).setCollideWorldBounds(true);
         (<Phaser.Physics.Arcade.Body>this.loader.body).setBounce(1, 1);
+
+        this.scene.transition({
+            target: 'Game',
+            duration: 1000,
+        });
     }
 
     public update() {
