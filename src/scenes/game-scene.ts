@@ -1,3 +1,6 @@
+import { Wall } from "../ui/wall";
+import { Ball } from "../ui/ball";
+
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
@@ -10,17 +13,21 @@ export class GameScene extends Phaser.Scene {
         super(sceneConfig);
     }
 
+    private topWall;
+    private bottomWall;
+    private ball;
+
     public create() {
-        this.add.text(100, 50, 'GAME');
 
-        // world bounds
+        // top, bottom walls
+        this.topWall = new Wall(this, this.game.scale.width / 2, 20, this.game.scale.width, 20, 0x0DDEE6);
+        this.bottomWall = new Wall(this, this.game.scale.width / 2, this.game.scale.height - 20, this.game.scale.width, 20, 0x0DDEE6);
+        this.ball = new Ball(this, this.game.scale.width / 2, this.game.scale.height / 2)
+    }
 
-        // game pin
-
-
-        // player 1 & 2 info
-
-        // points
+    public update() {
+        this.physics.world.collide(this.ball, this.topWall, null, null, this);
+        this.physics.world.collide(this.ball, this.bottomWall, null, null, this);
     }
 }
 
