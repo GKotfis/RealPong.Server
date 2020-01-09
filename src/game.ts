@@ -1,6 +1,4 @@
-import * as Phaser from 'phaser'
 import Scenes from './scenes'
-import * as socketio from 'socket.io'
 
 const gameConfig: Phaser.Types.Core.GameConfig = {
     title: 'Real Pong',
@@ -20,14 +18,4 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     backgroundColor: '#000000'
 }
 
-export const game = new Phaser.Game(gameConfig);
-
-let io = require("socket.io");
-io.on("connection", function (socket: any) {
-    console.log("a user connected");
-});
-
-window.addEventListener('resize', () => {
-    game.scale.refresh();
-})
-
+const game = new Phaser.Game(gameConfig);

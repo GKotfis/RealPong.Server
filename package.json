@@ -4,18 +4,25 @@
   "description": "Real Pong Game",
   "main": "src/main.ts",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server"
+    "start": "npm run serve",
+    "build": "npm run build-ts",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "serve": "node dist/server.js",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "watch": "nodemon dist/server.js"
   },
   "author": "Grzegorz Kotfis",
   "license": "MIT",
   "dependencies": {
-    "@types/socket.io": "^2.1.4",
-    "phaser": "^3.21.0",
+    "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.2",
+    "@types/socket.io": "^2.1.4",
     "copy-webpack-plugin": "^5.1.1",
+    "phaser": "^3.21.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.4",
     "webpack": "^4.41.5",

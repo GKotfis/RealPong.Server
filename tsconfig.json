@@ -1,9 +1,22 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "sourceMap": true
+        "module": "CommonJS",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "ES6",
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/*",
+                "src/types/*"
+            ]
+        }
     },
     "include": [
-        "**/*.ts"
-    ],
+        "src/server.ts"
+    ]
 }
