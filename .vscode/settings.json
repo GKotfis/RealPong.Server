@@ -2,5 +2,11 @@
     "workbench.colorCustomizations": {
         "titleBar.activeBackground": "#0b1057",
         "titleBar.inactiveBackground": "#0b1057"
-    }
+    },
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/cd2af911-e1f2-4651-b314-8729f6fe1a00/resourceGroups/RealPong/providers/Microsoft.Web/sites/RealPongServer",
+    "appService.deploySubpath": ""
 }
