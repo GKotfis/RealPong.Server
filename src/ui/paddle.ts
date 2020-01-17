@@ -8,5 +8,11 @@ export class Paddle extends Phaser.GameObjects.Rectangle {
         this.scene.physics.add.existing(this, false);
         (<Phaser.Physics.Arcade.Body>this.body).setBounce(1, 1);
         (<Phaser.Physics.Arcade.Body>this.body).setImmovable(true);
+        (<Phaser.Physics.Arcade.Body>this.body).collideWorldBounds = true;
+        // (<Phaser.Physics.Arcade.Body>this.body).checkCollision.up = true;
+        // (<Phaser.Physics.Arcade.Body>this.body).checkCollision.down = true;
     }
-}
+
+    public update() {
+    }
+};
