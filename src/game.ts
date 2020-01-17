@@ -11,7 +11,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     physics: {
         default: 'arcade',
         arcade: {
-            debug: true
+            debug: false
         }
     },
     parent: 'game',
@@ -19,5 +19,3 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
 }
 
 const game = new Phaser.Game(gameConfig);
-
-const socket = io("http://localhost:3000");
