@@ -1,3 +1,7 @@
+Classic Pong game controlled by smartphone (gyroscope sensor)
+
+Tech stack: Phaser game engine, websockets, TypeScript
+
 colors:
 
 <h2 style="color: #540D6E;">#540D6E</h2>
